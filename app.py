@@ -6,7 +6,7 @@ from workApi import Quick
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/hello')
 def hello_world():
     find = request.args.get("find")
     choice = request.args.get("choice")
