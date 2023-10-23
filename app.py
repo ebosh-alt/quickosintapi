@@ -6,7 +6,7 @@ from workApi import Quick
 app = Flask(__name__)
 
 
-@app.route('/quickosintapi')
+@app.route('/quickosintapiJkB6kG7RTMEsZ98T92*jyeUoSEC')
 def hello_world():
     # return 'Hello World!'
     find = request.args.get("find")
