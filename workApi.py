@@ -160,48 +160,49 @@ class Quick:
             return info
 
     def find(self, choice, req) -> tuple[list, list, list] | None:
-        match choice:
-            case "по телефону":
-                link = f"{self.url}{req}"
 
-            case "по почте":
-                link = f"{self.url}{req}"
+        if choice == "по телефону":
+            link = f"{self.url}{req}"
 
-            case "по паролю":
-                link = f"{self.url}pas%20{req}"
+        elif choice == "по почте":
+            link = f"{self.url}{req}"
 
-            case "по ФИО":
-                link = f"{self.url}RU%7C{req}"
+        elif choice == "по паролю":
+            link = f"{self.url}pas%20{req}"
 
-            case "по skype":
-                link = f"{self.url}skype%20{req}"
+        elif choice == "по ФИО":
+            link = f"{self.url}RU%7C{req}"
 
-            case "по Telegram ID":
-                link = f"{self.url}%23id{req}"
+        elif choice == "по skype":
+            link = f"{self.url}skype%20{req}"
 
-            case "по Telegram UserName":
-                link = f"{self.url}%40{req}"
+        elif choice == "по Telegram ID":
+            link = f"{self.url}%23id{req}"
 
-            case "по паспорту":
-                link = f"{self.url}pasp%20{req}"
+        elif choice == "по Telegram UserName":
+            link = f"{self.url}%40{req}"
 
-            case "по ИНН":
-                link = f"{self.url}inn%20{req}"
+        elif choice == "по паспорту":
+            link = f"{self.url}pasp%20{req}"
 
-            case "по СНИЛС":
-                link = f"{self.url}snils%20{req}"
+        elif choice == "по ИНН":
+            link = f"{self.url}inn%20{req}"
 
-            case "по номеру авто":
-                link = f"{self.url}{req}"
+        elif choice == "по СНИЛС":
+            link = f"{self.url}snils%20{req}"
 
-            case "по VIN авто":
-                link = f"{self.url}{req}"
+        elif choice == "по номеру авто":
+            link = f"{self.url}{req}"
 
-            case "по соцсетям":
-                link = f"{self.url}{req.replace('/', '%2F')}"
+        elif choice == "по VIN авто":
+            link = f"{self.url}{req}"
 
-            case _:
-                link = None
+        elif choice == "по соцсетям":
+            link = f"{self.url}{req.replace('/', '%2F')}"
+
+        else:
+            link = None
+
         if link:
             info = self.get_request_api(link)
             return info
