@@ -22,4 +22,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="178.208.79.10", port=80)
