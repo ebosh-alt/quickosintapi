@@ -202,6 +202,7 @@ class Quick:
 
             case _:
                 link = None
+
         if link:
             info = self.get_request_api(link)
             return info
