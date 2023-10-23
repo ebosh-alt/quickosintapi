@@ -1,59 +1,0 @@
-
-upython:S116"WRename this field "namesPhoneBooks" to match the regular expression ^[_a-z][_a-z0-9]*$.(°Æü®8Ô§˜À´1
-}python:S116"ZRename this field "namesDatabaseItems" to match the regular expression ^[_a-z][_a-z0-9]*$.(É¨µÄøÿÿÿÿ8Õ§˜À´1
-opython:S116"QRename this field "carModels" to match the regular expression ^[_a-z][_a-z0-9]*$.(û¹—ß8Û§˜À´1
-upython:S116"RRename this field "phoneInfos" to match the regular expression ^[_a-z][_a-z0-9]*$.(—•€Ïıÿÿÿÿ8Ø§˜À´1
-qpython:S116 "SRename this field "infoAddInfo" to match the regular expression ^[_a-z][_a-z0-9]*$.(›©“Ä8Ú§˜À´1
-rpython:S116"TRename this field "workAdresses" to match the regular expression ^[_a-z][_a-z0-9]*$.(ƒÄÏÃ8×§˜À´1
-spython:S116""PRename this field "infoApps" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÇşºÁøÿÿÿÿ8Ğ§˜À´1
-lpython:S116"NRename this field "snUrls" to match the regular expression ^[_a-z][_a-z0-9]*$.(©ƒêä8Î§˜À´1
-mpython:S116"ORename this field "carVins" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÚÏØÇ8Ö§˜À´1
-tpython:S116#"VRename this field "infoUserAgents" to match the regular expression ^[_a-z][_a-z0-9]*$.(óÂ²á8×§˜À´1
-upython:S116"WRename this field "professionTypes" to match the regular expression ^[_a-z][_a-z0-9]*$.(òõíÖ8Õ§˜À´1
-rpython:S116!"TRename this field "infoStatuses" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦¨Ğ§8Ó§˜À´1
-npython:S116"KRename this field "iPs" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ù˜·ùÿÿÿÿ8Ú§˜À´1
-ppython:S116"MRename this field "carNs" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŸÛ¸Šúÿÿÿÿ8Ø§˜À´1
-spython:S116"URename this field "snScreenNames" to match the regular expression ^[_a-z][_a-z0-9]*$.(öä¼¿8Û§˜À´1
-rpython:S116$"TRename this field "databaseInfo" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÁ©ˆ8Ü§˜À´1
-spython:S116"URename this field "passpCompiles" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÉÁÊ8Ò§˜À´1
-jpython:S116"LRename this field "icQs" to match the regular expression ^[_a-z][_a-z0-9]*$.(ëô™¦8Ù§˜À´1
-vpython:S116"SRename this field "carComments" to match the regular expression ^[_a-z][_a-z0-9]*$.(õáô¼úÿÿÿÿ8Û§˜À´1
-{python:S4144"[Update this function so that its implementation is not identical to find_id_tg on line 135.(£ÕÊš8°”–À´1
-€python:S4144“"[Update this function so that its implementation is not identical to find_id_tg on line 135.(Å¹Á’ÿÿÿÿÿ8°”–À´1
-{python:S4144™"[Update this function so that its implementation is not identical to find_id_tg on line 135.(®Õ†ñ8°”–À´1
-{python:S4144Ÿ"[Update this function so that its implementation is not identical to find_id_tg on line 135.(â¿²–8°”–À´1
-€python:S4144¥"[Update this function so that its implementation is not identical to find_id_tg on line 135.(÷¸¸ëşÿÿÿÿ8°”–À´1
-{python:S4144«"[Update this function so that its implementation is not identical to find_id_tg on line 135.(ï…¶Á8°”–À´1
-{python:S4144±"[Update this function so that its implementation is not identical to find_id_tg on line 135.(€¤¶¦8°”–À´1
-ppython:S12265"LIntroduce a new variable or use its initial value before reassigning 'info'.(À­Œ¦şÿÿÿÿ8Ñğ˜À´1
-_python:S56447";Fix this code; "info" does not have a "__getitem__" method.(á§ú‚ùÿÿÿÿ8Ôğ˜À´1
-Zpython:S56448";Fix this code; "info" does not have a "__getitem__" method.(ÂşÓÛ8Ôğ˜À´1
-Zpython:S56449";Fix this code; "info" does not have a "__getitem__" method.(‚ä—8Ôğ˜À´1
-Zpython:S5644:";Fix this code; "info" does not have a "__getitem__" method.(ïêÚ—8Õğ˜À´1
-_python:S5644;";Fix this code; "info" does not have a "__getitem__" method.(ÎÄàÛüÿÿÿÿ8Õğ˜À´1
-_python:S5644<";Fix this code; "info" does not have a "__getitem__" method.(ŒÂòúıÿÿÿÿ8Õğ˜À´1
-Ypython:S5644=";Fix this code; "info" does not have a "__getitem__" method.(´°Ü8Õğ˜À´1
-_python:S5644>";Fix this code; "info" does not have a "__getitem__" method.(è‘¢½şÿÿÿÿ8Õğ˜À´1
-Zpython:S5644?";Fix this code; "info" does not have a "__getitem__" method.(ú–­8Õğ˜À´1
-_python:S5644@";Fix this code; "info" does not have a "__getitem__" method.(íÔÈ¤ÿÿÿÿÿ8Õğ˜À´1
-Zpython:S5644A";Fix this code; "info" does not have a "__getitem__" method.(¶ŞÆ8Öğ˜À´1
-Zpython:S5644B";Fix this code; "info" does not have a "__getitem__" method.(¨êâ³8Öğ˜À´1
-_python:S5644C";Fix this code; "info" does not have a "__getitem__" method.(÷Ü„„üÿÿÿÿ8Öğ˜À´1
-_python:S5644D";Fix this code; "info" does not have a "__getitem__" method.(ÜøŠ´ùÿÿÿÿ8Öğ˜À´1
-Zpython:S5644E";Fix this code; "info" does not have a "__getitem__" method.(êæÙ¢8Öğ˜À´1
-_python:S5644F";Fix this code; "info" does not have a "__getitem__" method.(­¨×âşÿÿÿÿ8Öğ˜À´1
-Zpython:S5644G";Fix this code; "info" does not have a "__getitem__" method.(Ÿ¿ÿ8Öğ˜À´1
-Zpython:S5644H";Fix this code; "info" does not have a "__getitem__" method.(–Ôœğ8×ğ˜À´1
-Zpython:S5644I";Fix this code; "info" does not have a "__getitem__" method.(­ÏÓ‚8×ğ˜À´1
-_python:S5644J";Fix this code; "info" does not have a "__getitem__" method.(éÕÿ¶üÿÿÿÿ8×ğ˜À´1
-_python:S5644K";Fix this code; "info" does not have a "__getitem__" method.(¯Œªªşÿÿÿÿ8×ğ˜À´1
-Zpython:S5644L";Fix this code; "info" does not have a "__getitem__" method.(Å¦óÆ8×ğ˜À´1
-_python:S5644M";Fix this code; "info" does not have a "__getitem__" method.(µß«şÿÿÿÿ8×ğ˜À´1
-_python:S5644N";Fix this code; "info" does not have a "__getitem__" method.(ÚºÔ³úÿÿÿÿ8Øğ˜À´1
-_python:S5644O";Fix this code; "info" does not have a "__getitem__" method.(—¼’ôÿÿÿÿÿ8Øğ˜À´1
-Zpython:S5644P";Fix this code; "info" does not have a "__getitem__" method.(¶ÎÍ 8Øğ˜À´1
-_python:S5644Q";Fix this code; "info" does not have a "__getitem__" method.(Şáåæıÿÿÿÿ8Øğ˜À´1
-Zpython:S5644R";Fix this code; "info" does not have a "__getitem__" method.(¡´¢ï8Øğ˜À´1
-_python:S5644S";Fix this code; "info" does not have a "__getitem__" method.(ÎÜÒûÿÿÿÿ8Øğ˜À´1
-_python:S5644T";Fix this code; "info" does not have a "__getitem__" method.(µ¦£‡şÿÿÿÿ8Ùğ˜À´1
-_python:S5644U";Fix this code; "info" does not have a "__getitem__" method.(¯ˆÕñûÿÿÿÿ8Ùğ˜À´1
