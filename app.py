@@ -1,7 +1,9 @@
+import flask
 from flask import Flask, render_template, request, redirect, url_for
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 from config import token, path, name_login, password_login
+from db import users, User
 from workApi import Quick
 
 app = Flask(__name__)
@@ -11,15 +13,15 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-class User(UserMixin):
+class UserFlask(UserMixin):
     pass
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    user = User()
-    user.id = user_id
-    return user
+    user_flask = UserFlask()
+    user_flask.id = user_id
+    return user_flask
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -28,9 +30,12 @@ def login():
         name = request.form['name']
         password = request.form['password']
         if name == name_login and password == password_login:
-            user = User()
-            user.id = 1
+            id = users.get_id_by_name(name)
+            user = UserFlask()
+            user.id = id
             login_user(user)
+            # user = User(id=id, name=name, password=password)
+            # users.add(user)
             return redirect(url_for("api"))
     return render_template('login.html')
 
@@ -48,14 +53,41 @@ def api():
     find = request.args.get("find")
     choice = request.args.get("choice")
     quick = Quick(token)
+
     if find and choice:
         info = quick.find(choice, find)
         if info:
             info, info_add_info, info_user = info[0], info[1], info[2]
             return render_template("index.html", info=info,
                                    info_add_info=info_add_info, info_user=info_user)
-
+        else:
+            flask.flash('Нет данных')
     return render_template('index.html')
+
+
+@app.route(f'/admin')
+@login_required
+def admin():
+    id = current_user.id
+    name = request.args.get("name")
+    password = request.args.get("password")
+    del_name = request.args.get("del_name")
+    if id in users:
+        user = users.get(id)
+        if user.name == name_login and user.password == password_login:
+            if name and password:
+                id = len(users) + 1
+                user = User(id=id, name=name, password=password)
+                users.add(user)
+                flask.flash(f'Пользователь {name} добавлен')
+                return redirect(url_for('admin'))
+            elif del_name:
+                id = users.get_id_by_name(del_name)
+                users.del_instance(id)
+                flask.flash(f'Пользователь {del_name} удален')
+                return redirect(url_for('admin'))
+            return render_template('admin.html')
+    return "hello"
 
 
 if __name__ == '__main__':
