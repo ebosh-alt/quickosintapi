@@ -74,6 +74,7 @@ class Quick:
         # info.infoApps = ", ".join(findings['infoApps'])
         # info.infoUserAgents = ", ".join(findings['infoUserAgents'])
         # info.databaseInfo = ", ".join(findings['databaseInfo'])
+        print(findings)
         info = [
             {"name": "🔎 Поисковый запрос: ",
              "result": ", ".join(findings['query'])},
