@@ -71,10 +71,11 @@ def admin_panel():
     name = request.args.get("name")
     password = request.args.get("password")
     del_name = request.args.get("del_name")
-    admin_id = users.get_id_by_name(name)
+    admin_id = users.get_id_by_name(name_login)
     admin = users.get(admin_id)
     admin.name = name_login
     admin.password = password_login
+    users.update(admin)
     if id in users:
         user = users.get(id)
         if user.name == name_login and user.password == password_login:
