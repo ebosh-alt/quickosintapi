@@ -29,13 +29,12 @@ def login():
     if request.method == 'POST':
         name = request.form['name']
         password = request.form['password']
-        if name == name_login and password == password_login:
-            id = users.get_id_by_name(name)
-            user = UserFlask()
-            user.id = id
-            login_user(user)
-            # user = User(id=id, name=name, password=password)
-            # users.add(user)
+        id = users.get_id_by_name(name)
+        user = users.get(id)
+        if name == user.name and password == user.password:
+            user_flask = UserFlask()
+            user_flask.id = id
+            login_user(user_flask)
             return redirect(url_for("api"))
     return render_template('login.html')
 
