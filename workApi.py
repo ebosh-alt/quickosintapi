@@ -41,7 +41,7 @@ class Quick:
         self.url = "https://quickosintapi.com/api/v1/search/agregate/"
 
     @staticmethod
-    def parse_info(findings: dict) -> tuple[list, list, list]:
+    def parse_info(findings: dict, query: str) -> tuple[list, list, list]:
         # info = Info()
         # info.names = ", ".join(findings['names'])
         # info.namesPhoneBooks = ", ".join(findings['namesPhoneBooks'])
@@ -74,10 +74,9 @@ class Quick:
         # info.infoApps = ", ".join(findings['infoApps'])
         # info.infoUserAgents = ", ".join(findings['infoUserAgents'])
         # info.databaseInfo = ", ".join(findings['databaseInfo'])
-        print(findings)
         info = [
             {"name": "🔎 Поисковый запрос: ",
-             "result": ", ".join(findings['query'])},
+             "result": query},
             {"name": "🤠 Все ФИО объекта",
              "result": ", ".join(findings['names'])},
             {"name": "🥚 ФИО объекта найденные в базах телефонных книг",
@@ -151,61 +150,61 @@ class Quick:
                                              "X-ClientId": "myClient-896357090909090"})
         return result.json()
 
-    def get_info(self, info: dict) -> tuple[list, list, list] | None:
+    def get_info(self, info: dict, query) -> tuple[list, list, list] | None:
         if info["items"]:
-            info = self.parse_info(info["items"][0])
+            info = self.parse_info(info["items"][0], query)
             return info
 
-    def get_request_api(self, link):
+    def get_request_api(self, link, query):
         request = self.make_query(link)
         if "Error" not in request:
-            info = self.get_info(request)
+            info = self.get_info(request, query)
             return info
 
-    def find(self, choice, req) -> tuple[list, list, list] | None:
+    def find(self, choice, query) -> tuple[list, list, list] | None:
         match choice:
             case "по телефону":
-                link = f"{self.url}{req}"
+                link = f"{self.url}{query}"
 
             case "по почте":
-                link = f"{self.url}{req}"
+                link = f"{self.url}{query}"
 
             case "по паролю":
-                link = f"{self.url}pas%20{req}"
+                link = f"{self.url}pas%20{query}"
 
             case "по ФИО":
-                link = f"{self.url}RU%7C{req}"
+                link = f"{self.url}RU%7C{query}"
 
             case "по skype":
-                link = f"{self.url}skype%20{req}"
+                link = f"{self.url}skype%20{query}"
 
             case "по Telegram ID":
-                link = f"{self.url}%23id{req}"
+                link = f"{self.url}%23id{query}"
 
             case "по Telegram UserName":
-                link = f"{self.url}%40{req}"
+                link = f"{self.url}%40{query}"
 
             case "по паспорту":
-                link = f"{self.url}pasp%20{req}"
+                link = f"{self.url}pasp%20{query}"
 
             case "по ИНН":
-                link = f"{self.url}inn%20{req}"
+                link = f"{self.url}inn%20{query}"
 
             case "по СНИЛС":
-                link = f"{self.url}snils%20{req}"
+                link = f"{self.url}snils%20{query}"
 
             case "по номеру авто":
-                link = f"{self.url}{req}"
+                link = f"{self.url}{query}"
 
             case "по VIN авто":
-                link = f"{self.url}{req}"
+                link = f"{self.url}{query}"
 
             case "по соцсетям":
-                link = f"{self.url}{req.replace('/', '%2F')}"
+                link = f"{self.url}{query.replace('/', '%2F')}"
 
             case _:
                 link = None
 
         if link:
-            info = self.get_request_api(link)
+            info = self.get_request_api(link, query)
             return info
