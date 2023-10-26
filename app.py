@@ -86,7 +86,7 @@ def admin():
                 flask.flash(f'Пользователь {del_name} удален')
                 return redirect(url_for('admin'))
             return render_template('admin.html')
-    return 401
+    return "Unauthorized"
 
 
 if __name__ == '__main__':
