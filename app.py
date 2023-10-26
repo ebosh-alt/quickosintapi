@@ -66,11 +66,15 @@ def api():
 
 @app.route(f'/admin')
 @login_required
-def admin():
+def admin_panel():
     id = current_user.id
     name = request.args.get("name")
     password = request.args.get("password")
     del_name = request.args.get("del_name")
+    admin_id = users.get_id_by_name(name)
+    admin = users.get(admin_id)
+    admin.name = name_login
+    admin.password = password_login
     if id in users:
         user = users.get(id)
         if user.name == name_login and user.password == password_login:
@@ -79,12 +83,12 @@ def admin():
                 user = User(id=id, name=name, password=password)
                 users.add(user)
                 flask.flash(f'Пользователь {name} добавлен')
-                return redirect(url_for('admin'))
+                return redirect(url_for('admin_panel'))
             elif del_name:
                 id = users.get_id_by_name(del_name)
                 users.del_instance(id)
                 flask.flash(f'Пользователь {del_name} удален')
-                return redirect(url_for('admin'))
+                return redirect(url_for('admin_panel'))
             return render_template('admin.html')
     return "Unauthorized"
 
