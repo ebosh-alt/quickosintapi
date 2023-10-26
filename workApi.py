@@ -75,6 +75,8 @@ class Quick:
         # info.infoUserAgents = ", ".join(findings['infoUserAgents'])
         # info.databaseInfo = ", ".join(findings['databaseInfo'])
         info = [
+            {"name": "🔎 Поисковый запрос: ",
+             "result": ", ".join(findings['query'])},
             {"name": "🤠 Все ФИО объекта",
              "result": ", ".join(findings['names'])},
             {"name": "🥚 ФИО объекта найденные в базах телефонных книг",

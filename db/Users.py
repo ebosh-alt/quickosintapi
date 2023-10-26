@@ -9,10 +9,14 @@ class User:
         if len(kwargs):
             self.name: str | None = kwargs.get('name')
             self.password: str | None = kwargs.get('password')
+            self.data_query: str | None = kwargs.get('data_query')
+            self.type_query: str | None = kwargs.get('type_query')
 
         else:
             self.name: str | None = None
             self.password: str | None = None
+            self.data_query: str | None = None
+            self.type_query: str | None = None
 
     def __iter__(self):
         dict_class = self.__dict__
@@ -58,6 +62,9 @@ class Users(Sqlite3_Database):
             obj_tuple = self.get_elem_sqllite3(id)
             obj = User(id=obj_tuple[0],
                        name=obj_tuple[1],
-                       password=obj_tuple[2])
+                       password=obj_tuple[2],
+                       data_query=obj_tuple[3],
+                       type_query=obj_tuple[4],
+                       )
             return obj
         return False

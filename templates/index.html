@@ -87,16 +87,14 @@
     <button class="List" type="submit">Отправить</button>
 </form>
 <div class="List">
-{% with messages = get_flashed_messages() %}
-   {% if messages %}
-      {% for message in messages %}
-         {{ message }}
-      {% endfor %}
-   {% endif %}
-{% endwith %}
-</div>
-<div class="info">
-
+    <p><a href="/generate-pdf" download>Скачать PDF</a></p>
+    {% with messages = get_flashed_messages() %}
+       {% if messages %}
+          {% for message in messages %}
+             {{ message }}
+          {% endfor %}
+       {% endif %}
+    {% endwith %}
     {% if info %}
         {% for el in info %}
             <p><strong>{{ el.name }}: </strong>{{ el.result }}</p>

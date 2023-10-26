@@ -1,10 +1,11 @@
 import flask
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, Response
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 from config import token, path, name_login, password_login
 from db import users, User
 from workApi import Quick
+import pdfkit
 
 app = Flask(__name__)
 app.secret_key = 'qwdvioknghe4352ncuIK*asde'
@@ -57,11 +58,43 @@ def api():
         info = quick.find(choice, find)
         if info:
             info, info_add_info, info_user = info[0], info[1], info[2]
+
+            id = current_user.id
+            user = users.get(id)
+            user.data_query = find
+            user.type_query = choice
+            users.update(user)
             return render_template("index.html", info=info,
                                    info_add_info=info_add_info, info_user=info_user)
         else:
             flask.flash('Нет данных')
     return render_template('index.html')
+
+
+@app.route(f'/generate-pdf')
+@login_required
+def download_pdf():
+    user = users.get(current_user.id)
+    quick = Quick(token)
+    info = quick.find(user.type_query, user.data_query)
+    info, info_add_info, info_user = info[0], info[1], info[2]
+    out = render_template("index.html", info=info,
+                          info_add_info=info_add_info, info_user=info_user)
+
+    options = {
+        "orientation": "landscape",
+        "page-size": "A4",
+        "margin-top": "1.0cm",
+        "margin-right": "1.0cm",
+        "margin-bottom": "1.0cm",
+        "margin-left": "1.0cm",
+        "encoding": "UTF-8",
+    }
+
+    pdf = pdfkit.from_string(out, options=options)
+
+    return Response(pdf, mimetype="application/pdf",
+                    headers={"Content-Disposition": "attachment;filename=outfile.pdf"})
 
 
 @app.route(f'/admin')
