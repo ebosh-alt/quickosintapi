@@ -1,11 +1,13 @@
 import flask
 from flask import Flask, render_template, request, redirect, url_for, Response
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user, login_manager
 
 from config import token, path, name_login, password_login
 from db import users, User
 from workApi import Quick
 import pdfkit
+from flask import redirect, url_for, request
+from http import HTTPStatus
 
 app = Flask(__name__)
 app.secret_key = 'qwdvioknghe4352ncuIK*asde'
@@ -44,6 +46,11 @@ def login():
 @login_required
 def logout():
     logout_user()
+    return redirect(url_for('login'))
+
+
+@login_manager.unauthorized_handler
+def unauthorized():
     return redirect(url_for('login'))
 
 
@@ -128,4 +135,4 @@ def admin_panel():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0', )
