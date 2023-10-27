@@ -1,5 +1,5 @@
 token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Njg3MDk4NzYiLCJqdGkiOiI2NGVkNzY3Mzk2MzEzNjY2YmJhMjkzNGUiLCJleHAiOjIwMDg5MDMxNTcsImlzcyI6IkxPTGFwcCIsImF1ZCI6IkxPTHNlYXJzaCJ9.gvlHapq9TimIsIwKLpLAXl3aMSsN2GZU_0-HMRiVxSM"
 name_login = "root"
-password_login = "root"
+password_login = "1234"
 path = "osint"
 # pip install werkzeug==2.3.0
